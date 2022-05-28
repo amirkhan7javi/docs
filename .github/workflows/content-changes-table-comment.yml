@@ -49,7 +49,7 @@ jobs:
       PR_NUMBER: ${{ github.event.pull_request.number }}
     steps:
       - name: check out repo content
-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
 
       - name: Get preview app info
         env:
@@ -82,7 +82,7 @@ jobs:
           body-includes: '<!-- MODIFIED_CONTENT_LINKING_COMMENT -->'
 
       - name: Update comment
-        uses: peter-evans/create-or-update-comment@5221bf4aa615e5c6e95bb142f9673a9c791be2cd
+        uses: peter-evans/create-or-update-comment@c9fcb64660bc90ec1cc535646af190c992007c32
         with:
           comment-id: ${{ steps.findComment.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
